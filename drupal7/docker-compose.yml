@@ -2,6 +2,7 @@ version: '2'
 services:
   web:
     build: ./web
+    hostname: 'drupal7.com'
     ports:
       - "8080:80"
     volumes:
@@ -20,5 +21,5 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: drupal
-      MYSQL_USER: admin
-      MYSQL_PASSWORD: admin
+      MYSQL_USER: drupal
+      MYSQL_PASSWORD: drupal
