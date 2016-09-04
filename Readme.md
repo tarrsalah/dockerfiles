@@ -3,6 +3,7 @@
 
 ## summary 
 
-| image                | details                                |
-|----------------------|----------------------------------------|
-| [drupal7](./drupal7) | drupal 7 on centos 7, apache and mysql |
+| image                  | details                     |
+|------------------------|-----------------------------|
+| [drupal7](./drupal7)   | drupal 7 on lamp (centos 7) |
+| [dolibarr](./dolibarr) | dolibarr on lamp (centos 7) |

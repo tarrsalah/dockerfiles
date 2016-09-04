@@ -1,0 +1,24 @@
+version: '2'
+services:
+  dolibarr:
+    build: ./dolibarr
+    ports:
+      - "8080:80"
+    volumes:
+      - "./dolibarr/instance/htdocs:/var/www/html"
+    depends_on:
+      - db
+    links:
+      - db
+  db:
+    image: mysql
+    restart: always
+    volumes:
+      - "./.data/db:/var/lib/mysql"
+    ports:
+      - "3316:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: dolibarr
+      MYSQL_USER: dolibarr
+      MYSQL_PASSWORD: dolibarr
