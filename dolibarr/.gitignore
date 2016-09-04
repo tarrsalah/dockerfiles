@@ -1,2 +1,2 @@
-dolibarr/instance/*
-!dolibarr/instance/.gitkeep
+web/dolibarr/*
+!web/dolibarr/.gitkeep

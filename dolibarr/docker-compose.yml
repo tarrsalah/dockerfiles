@@ -5,7 +5,7 @@ services:
     ports:
       - "8080:80"
     volumes:
-      - "./dolibarr/instance/htdocs:/var/www/html"
+      - "./web/dolibarr/htdocs:/var/www/html"
     depends_on:
       - db
     links:
