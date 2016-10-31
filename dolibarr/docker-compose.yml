@@ -1,7 +1,7 @@
 version: '2'
 services:
   dolibarr:
-    build: ./dolibarr
+    build: ./web
     ports:
       - "8080:80"
     volumes:
