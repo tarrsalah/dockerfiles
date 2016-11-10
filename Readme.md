@@ -35,4 +35,3 @@ mkdir htdocs/documents
 chmod -R o+w htdocs/documents
 ```
 
-* TODO
