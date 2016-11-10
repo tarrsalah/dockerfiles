@@ -1,22 +1,23 @@
 version: '2'
 services:
   dolibarr:
-    build: ./web
+    build: ..
     ports:
       - "8080:80"
     volumes:
-      - "./web/dolibarr/htdocs:/var/www/html"
+      - "../dolibarr:/var/www/html"
     depends_on:
       - db
     links:
       - db
   db:
-    image: mysql
+    image: mysql:latest
     restart: always
     volumes:
-      - "./.data/db:/var/lib/mysql"
+      - "./.data:/var/lib/mysql"
     ports:
       - "3316:3306"
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: dolibarr
