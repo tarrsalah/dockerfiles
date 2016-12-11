@@ -11,8 +11,8 @@ RUN yum -y update && yum clean all
 
 RUN yum -y install httpd
 
-RUN yum -y install php56w php56w-cli php56w-mysql php56w-gd  && yum clean all
+RUN yum -y install php56w php56w-cli php56w-gd php56w-mysql php56-mbsting php56w-gd php56w-pecl-xdebug && yum clean all
 
-RUN echo "ServerName localhost" >> /etc/httpd/conf/httpd.conf
+COPY ./vhost.conf /etc/httpd/conf.d
 
 ENTRYPOINT ["/usr/sbin/httpd", "-D", "FOREGROUND"]
