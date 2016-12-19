@@ -13,7 +13,6 @@ services:
 
   db:
     image: mysql:latest
-    restart: always
     volumes:
       - ".db:/var/lib/mysql"
     ports:
