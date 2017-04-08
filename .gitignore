@@ -1,2 +1,4 @@
 .data
 .db
+/drupal8/drupal8/*
+!/drupal8/drupal8/.gitkeep

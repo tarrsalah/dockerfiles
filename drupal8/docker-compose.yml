@@ -1,0 +1,22 @@
+version: '2'
+services:
+  web:
+    build: ./docker
+    ports:
+      - "3000:80"
+    volumes:
+      - "./drupal8:/var/www/html"
+    depends_on:
+      - db
+    links:
+      - db
+  db:
+    image: mysql
+    restart: always
+    volumes:
+      - "./.db:/var/lib/mysql"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: db
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
