@@ -1,5 +1,0 @@
-web/drupal/*
-!web/drupal/.gitkeep
-.data
-vendor
-

@@ -7,11 +7,10 @@ RUN rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
 RUN yum -y update
 RUN yum -y upgrade
 
-RUN yum -y install openssl httpd
+RUN yum -y install httpd openssl php71w php71w-cli php71-mbstring php71-mysqlnd php71-pdo
+RUN yum clean all
 
-RUN yum -y install php69w php71w-cli php56w-openid php71w-mysql php71-gd php71-xml php71w-mbstring php71w-openssl
-
-RUN yum -y clean all
+ADD ./apache.conf /etc/httpd/conf.d
 
 WORKDIR /var/www/html
 
