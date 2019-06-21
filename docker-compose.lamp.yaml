@@ -1,24 +1,26 @@
-version: '3.4'
+version: "3"
 services:
   web:
-    build: php-apache
+    image: tarrsalah/php-apache
     ports:
-      - "3000:80"
+      - 3000:80
     volumes:
-      - "..:/var/www/html"
+      - .:/var/www/html
     depends_on:
       - mariadb
     links:
       - mariadb
   mariadb:
-    build: mariadb
+    image: mariadb
     volumes:
-      - "./mariadb/.mysql:/var/lib/mysql"
+      - mariadb_volume:/var/lib/mysql
   adminer:
     image: adminer
     ports:
-      - "3300:8080"
+      - 3300:8080
     depends_on:
       - mariadb
     links:
       - mariadb
+volumes:
+  mariadb_volume:
